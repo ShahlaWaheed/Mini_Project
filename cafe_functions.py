@@ -31,8 +31,7 @@ def read_text_file(get_content):
 
 #read_text_file()
 def update_text_file():
-    # new_list = ""
-    # update_list = read_text_file(new_list)
+    #update_list = read_text_file('product_cafe.txt')
 
     with open('product_cafe.txt','r') as file:
         update_list = file.readlines()
@@ -42,14 +41,14 @@ def update_text_file():
     #print_list(update_list)
     print('Please enter a number for the product you want to update')
     item_index =int(input())
-    print('Please enter a new product name')
+    print('Pleas enter a new product name')
     item_str =input()
-    update_list[item_index] = item_str + '\n'
+    update_list[item_index] = item_str +'\n'
     with open ('product_cafe.txt', 'w') as file:
         file.writelines(update_list)
 
         file.close()
-    print(' Product has been updated successfully')
+    print(' item has been updated successfully')
 
 
 def delete_item():
