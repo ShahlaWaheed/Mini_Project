@@ -13,7 +13,7 @@ def print_list(current_list):
         current_list = print_file.readlines()
         for each_line in current_list:
             print(current_list.index(each_line), '-----------------',each_line)
-        print('----------------------------------------------------------', '\n')
+        print('\n')
 
 
 def add_text_file(add_product):
@@ -21,24 +21,17 @@ def add_text_file(add_product):
     add_file.write(add_product)
     print(add_product , '\n')
     add_file.close()
-    #return update_product
-
-def read_text_file(get_content):
-    read_file = open('product_cafe.txt', "r")
-    get_content= read_file.read()
+    
+def read_text_file():
+    with open('product_cafe.txt', "r") as read_file:
+        get_content = read_file.readlines()
     print_list(get_content)
-    #print(get_content, '\n')
+    return get_content
 
-#read_text_file()
 def update_text_file():
-    #update_list = read_text_file('product_cafe.txt')
-
-    with open('product_cafe.txt','r') as file:
-        update_list = file.readlines()
-        for each_product in update_list:
-            index1 = update_list.index(each_product)
-            print(index1,'-----------', each_product)
-    #print_list(update_list)
+    #update_list will read and print the list from mentioned fuctions 
+    update_list = read_text_file()
+    #print('\n','Please enter a number for the product you want to update')
     print('Please enter a number for the product you want to update')
     item_index =int(input())
     print('Pleas enter a new product name')
@@ -46,20 +39,19 @@ def update_text_file():
     update_list[item_index] = item_str +'\n'
     with open ('product_cafe.txt', 'w') as file:
         file.writelines(update_list)
+    print_list(update_list)
 
-        file.close()
+    file.close()
     print(' item has been updated successfully')
 
 
 def delete_item():
-    with open('product_cafe.txt', 'r') as file:
-        data = file.readlines()
-        print_list(data)
-        print('Please enter a number of the product, wich you want to delete:')
-        delete_index = int(input())
-        data.pop(delete_index)
+    delete_product = read_text_file()
+    print('Please enter a number of the product, which you want to delete: ')
+    delete_index = int(input())
+    delete_product.pop(delete_index)
     with open('product_cafe.txt','w') as file:
-        for item in data:
+        for item in delete_product:
                 file.write(item)
         print('Item deleted successfully')
     file.close()
