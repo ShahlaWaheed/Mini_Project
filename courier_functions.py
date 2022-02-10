@@ -24,7 +24,7 @@ def add_courier():
     print( ' Courier added successfully', '\n')
     read_courier()
     return add_courier
-    file.close()
+    
 
 def read_courier():
     with open('courier.txt', "r") as read_file:
@@ -49,7 +49,7 @@ def update_courier():
         file.writelines(update_list)
         print('\n','Courier updated successfully', ' and new list is:','\n')
         print_courier(update_list)
-    file.close()
+    
 
 
 def delete_courier():
@@ -60,8 +60,8 @@ def delete_courier():
     with open('product_cafe.txt','w') as file:
         for item in delete_product:
                 file.write(item)
-        print('Item deleted successfully')
-    file.close()
+        print('Courier deleted successfully')
+    
     # with open('courier.txt', 'r') as file:
     #     data = file.readlines()
     #     print_courier(data)
@@ -72,6 +72,6 @@ def delete_courier():
     #     for item in data:
     #             file.write(item)
     #     print('Item deleted successfully')
-    # file.close()
+    
 
 
