@@ -24,7 +24,7 @@ def add_courier():
     print( ' Courier added successfully', '\n')
     read_courier()
     return add_courier
-    file.close()
+    
 
 def read_courier():
     with open('courier.txt', "r") as read_file:
@@ -40,6 +40,7 @@ def update_courier():
     
     print('\n','Please enter a number for the courier you want to update')
     item_index =int(input())
+<<<<<<< HEAD
     if item_index in range(0,len(update_list)):
     #if item_index < 0 or item_index >= len(update_list):
         
@@ -54,6 +55,18 @@ def update_courier():
         print('Please enter valid number for the courier from courier list below:')
     
   
+=======
+    print('Please enter a new courier name')
+    item_str =input()
+    update_list[item_index] = item_str +'\n'
+    with open ('courier.txt', 'w') as file:
+        file.writelines(update_list)
+        print('\n','Courier updated successfully', ' and new list is:','\n')
+        print_courier(update_list)
+    
+
+
+>>>>>>> cc51abc77eff6da0c0a52455a949cf98543363b6
 def delete_courier():
     delete_product = read_courier()
     print('Please enter a number of the courier, which you want to delete: ')
@@ -62,7 +75,12 @@ def delete_courier():
     with open('courier.txt','w') as file:
         for item in delete_product:
                 file.write(item)
+<<<<<<< HEAD
         print('Item deleted successfully')
+=======
+        print('Courier deleted successfully')
+    
+>>>>>>> cc51abc77eff6da0c0a52455a949cf98543363b6
     # with open('courier.txt', 'r') as file:
     #     data = file.readlines()
     #     print_courier(data)
@@ -73,6 +91,6 @@ def delete_courier():
     #     for item in data:
     #             file.write(item)
     #     print('Item deleted successfully')
-    # file.close()
+    
 
 
