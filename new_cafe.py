@@ -1,5 +1,6 @@
 from cafe_functions import *
 from courier_functions import*
+from orders_functions import*
 import time
 ####shutil module to display text in the middle of the terminal
 import shutil
@@ -16,6 +17,7 @@ while True:
     print("0-------------------Exit.".center(center_text), '\n')
     print("1--------------Main Menu.".center(center_text), '\n')
     print("2----------------Courier.".center(center_text), '\n')
+    print("3----------------Order List.".center(center_text), '\n')
 
     exit_input = (input())
     # to caste it to int we can put   if int(exit_input)== 0:
@@ -86,11 +88,44 @@ while True:
 
             elif owner_input == '3':
                update_courier()
+               read_courier()
             
             # Delete a product
             elif owner_input == '4':
 
                 delete_courier()
+        
+    # orders dictionaries
+    elif exit_input == '3':
+        while True:
+            print('0 ----------------Main Menu.','\n')
+            print('1 ----------- View the Order List.','\n')
+            print('2 ------------Add new Order.', '\n')
+            print('3 ---------- Update order status.', '\n')
+            print('4 ---------- Update Customer"s detail .', '\n')
+            print('5-----------Delete an order', '\n')
+            owner_input = input()
+           #    # to caste it to int we can put   if int(owner_input)== 0:
+            if owner_input== '0':
+                print('What would you like to do?'.center(center_text))
+                break
+            elif owner_input =='1':
+                read_order()
+            elif owner_input =='2':
+                add_customer_detail()
+                print('Order added successfully')
+            elif owner_input =='3':
+                order_status()
+                print('Order status changed')
+            elif owner_input =='4':
+                update_order()
+
+            elif owner_input == '5':
+                order_delete()
+                print('Order deleted Successfully')
+
+            else:
+                print('Please make a valid choice')
     else:
-        print("Please Choose 0 to exit or 1 to View the menu")
+        print("Please chosse from the Options")
 

@@ -1,0 +1,16 @@
+
+customer_name,customer_address,customer_phone,courier,status
+{John,"Unit 2, 12 Main Street, LONDON, WH1 2ER",0789887334,2,preparing
+Ammara Ali,amerdele rod Wakefield,09875433,5,Preparing
+William W,Newside terrace Leeds,098765432,4,Preparing
+Hannah D,Rayan Street Bradford,098133425,1,Preparing
+]
+
+
+
+Jhon,New street,049494,5,Preparing
+David,119 newcross street,0987665443,4,Preparing
+Jhon,Amar,098765432,3,Ready
+Rayan,Amardale Road Wakefield,04242315162,5,Preparing
+William W,Newside terrace Leeds,098765432,4,Preparing
+Hannah D,Rayan Street Bradford,098133425,1,Preparing

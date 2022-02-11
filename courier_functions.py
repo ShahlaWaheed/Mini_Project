@@ -30,9 +30,7 @@ def read_courier():
     with open('courier.txt', "r") as read_file:
         get_content = read_file.readlines()
     print_courier(get_content)
-    
     return get_content
-
 
 def update_courier():
     # using read function to get the list
@@ -40,28 +38,31 @@ def update_courier():
 
  #print function to print that list   print_courier(update_list)
     
-    print('\n','Please enter a number for the product you want to update')
+    print('\n','Please enter a number for the courier you want to update')
     item_index =int(input())
-    print('Please enter a new courier name')
-    item_str =input()
-    update_list[item_index] = item_str +'\n'
-    with open ('courier.txt', 'w') as file:
-        file.writelines(update_list)
-        print('\n','Courier updated successfully', ' and new list is:','\n')
-        print_courier(update_list)
-    file.close()
-
-
+    if item_index in range(0,len(update_list)):
+    #if item_index < 0 or item_index >= len(update_list):
+        
+        print('Please enter a new courier name')
+        item_str =input()
+        update_list[item_index] = item_str +'\n'
+        with open ('courier.txt', 'w') as file:
+            file.writelines(update_list)
+            print('\n','Courier updated successfully', ' and new list is:','\n')
+    
+    else:
+        print('Please enter valid number for the courier from courier list below:')
+    
+  
 def delete_courier():
     delete_product = read_courier()
     print('Please enter a number of the courier, which you want to delete: ')
     delete_index = int(input())
     delete_product.pop(delete_index)
-    with open('product_cafe.txt','w') as file:
+    with open('courier.txt','w') as file:
         for item in delete_product:
                 file.write(item)
         print('Item deleted successfully')
-    file.close()
     # with open('courier.txt', 'r') as file:
     #     data = file.readlines()
     #     print_courier(data)
