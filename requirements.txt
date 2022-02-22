@@ -1,0 +1,6 @@
+cffi
+cryptography
+pycparser
+PyMySQL==1.0.2
+python-dotenv
+six

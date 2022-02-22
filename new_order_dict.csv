@@ -1,8 +1,6 @@
-customer_name,customer_address,customer_phone,courier,status
-Jhon,New street,049494,5,Ready
-David,119 newcross street,0987665443,4,Preparing
-Rayan,Amardale Road Wakefield,04242315162,5,Preparing
-William W,Newside terrace Leeds,098765432,4,Preparing
-Hannah D,Rayan Street Bradford,098133425,1,Preparing
-Joe,New street,0743261617,5,Preparing
-Robert,221 Deneside Terrace Bradford,074329191,6,Preparing
+customer_name,customer_address,customer_phone,courier,status,items
+Liayana,"Unit 2, 12 Main Street, LONDON, WH1 2ER",0789887334,2,Cancelled,"[3, 2, 1]"
+Hannah,new cross street,0789887334,3,Preparing,"[1, 2, 3]"
+Aron,little horton lane,0879494944,5,Cancelled,"[1, 2, 3]"
+Joe,boynton street,00973=334,6,ready,"[1, 2, 3]"
+Ali,abc street,000,9,Ready,"[1, 3, 4]"

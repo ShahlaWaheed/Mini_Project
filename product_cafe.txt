@@ -4,3 +4,13 @@ Green tea
 Orange Juice
 Iced Coffe
 Tea
+
+
+
+product_name,price
+Americano,1.5
+Coffee Latte,1.0
+Green tea,0.75
+Orange Juice,0.5
+Chilled Coffee,2.0
+Tea,0.5
