@@ -11,28 +11,27 @@ print("--------- Welcome to YOUR cafe! ---------")
 
 while True:
     print("Please choose from the Options below:", '\n')
-    print("0-------------------Exit.", '\n')
-    print("1--------------Products Menu.", '\n')
-    print("2----------------Couriers.", '\n')
-    print("3----------------Order List.", '\n')
+    print("0.  Exit.", '\n')
+    print("1.  Products Menu.", '\n')
+    print("2.  Couriers.", '\n')
+    print("3.  Orders.", '\n')
 
     exit_input = (input())
-    # to caste it to int we can put   if int(exit_input)== 0:
     if exit_input== '0':
         print('Goodbye')
         break
     elif exit_input=='1':
         while True:
-            print('0 ----------------Main Menu.', '\n')
-            print('1 ----------- View the products Menu.','\n')
-            print('2 ------------Add a product.', '\n')
-            print('3 ---------- Update a product.', '\n')
-            print('4-----------Delete a product', '\n')
+            print('0. Return to main Menu.', '\n')
+            print('1. View products.','\n')
+            print('2. Add a new product.', '\n')
+            print('3. Update a product.', '\n')
+            print('4. Delete a product', '\n')
             owner_input = input()
            #    # to caste it to int we can put   if int(owner_input)== 0:
 
             if owner_input== '0':
-                print('What would you like to do?')
+                print('Please choose from the options')
                 break
             elif owner_input == '1': 
                 view_products()
@@ -40,7 +39,7 @@ while True:
                 add_product_into_table()
                 view_products()
 
-                            # updating a product
+            # updating a product
 
             elif owner_input == '3':
                product_update_table()
@@ -56,14 +55,14 @@ while True:
                 ##diplay courier options
     elif exit_input=='2':
         while True:
-            print('0 --------------- View main menu.', '\n')
-            print('1 ---------------View the Couriers.','\n')
-            print('2 --------------Add an new courier.', '\n')
-            print('3 ---------Update a courier name.', '\n')
-            print('4 --------------- Delete a courier name', '\n')
+            print('0. Return to main menu.', '\n')
+            print('1. View Couriers.','\n')
+            print('2. Add a new courier.', '\n')
+            print('3. Update a courier.', '\n')
+            print('4. Delete a courier.', '\n')
             owner_input = input()
             if owner_input== '0':
-                print('What would you like to do?')
+                print('Please choose from the options')
                 break
             elif owner_input == '1': 
                 view_couriers()
@@ -86,12 +85,12 @@ while True:
     # orders dictionaries
     elif exit_input == '3':
         while True:
-            print('0 ----------------Main Menu.','\n')
-            print('1 ----------- View the Order List.','\n')
-            print('2 ------------Add new Order.', '\n')
-            print('3 ---------- Update order status.', '\n')
-            print('4 ---------- Update Customer"s detail .', '\n')
-            print('5-----------Delete an order', '\n')
+            print('0. Return to main Menu.','\n')
+            print('1. View Orders.','\n')
+            print('2. Add new Order.', '\n')
+            print("3. Update order's status.", '\n')
+            print("4. Update Order.", '\n')
+            print('5. Delete an order.', '\n')
             owner_input = input()
            #    # to caste it to int we can put   if int(owner_input)== 0:
             if owner_input== '0':
