@@ -106,8 +106,8 @@ while True:
                 update_order_status()
                 print('Order status changed')
             elif owner_input =='4':
-                #update_order_table()
-                pass
+                update_order_table()
+                #pass
 
             elif owner_input == '5':
                 del_order_from_table()
@@ -115,5 +115,5 @@ while True:
             else:
                 print('Please make a valid choice')
     else:
-        print("Please choose from the Options")
+        print("Please choose from the options")
 

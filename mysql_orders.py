@@ -72,7 +72,7 @@ def add_order_into_table():
 
         view_order_status()
 
-        print("Please enter Order Status:  ",'\n')
+        print("Please enter Order Status ID:  ",'\n')
         order_status = int(input())
         order_list.append(order_status)
         # getting product list from products table
@@ -133,61 +133,47 @@ def update_order_table():
         update_list =[]
         view_orders_from_table()
         order_input_two = int(input('Please enter Order id you want to change: '))
-        customer_name = input("Please enter customer's name (or press enter for no change) :")
+        customer_name = input("Please enter customer's name: ")#(or press enter for no change) :
         update_list.append(customer_name)
-        customer_address = input("Please enter customer's address (or press enter for no change) :")
+        customer_address = input("Please enter customer's address: ")#(or press enter for no change)
         update_list.append(customer_address)
-        # if customer_name =='':
-        #     pass
-        # #if customer_name!='':
-        # else:
-        #     if customer_name!='':
-        #         my_sql = my_sql + 'customer_name = %s'
-        #         update_list.append(customer_name)
-        #         if customer_address!='':
-        #             my_sql= my_sql +','
-        customer_mob = input("Please enter customer's mob number  (or press enter for no change) :")
-        # if customer_address == '':
-        #     pass
-        # else :#customer_address !='':
-        #     my_sql = my_sql + 'customer_name =%s'
+        
+        customer_mob = input("Please enter customer's mob number: ") #(or press enter for no change) 
+       
         update_list.append(customer_mob)
-        #     if customer_mob!='':
-        #         my_sql= my_sql +','
-        # if customer_mob =='': 
-        #     pass
 
-        # else:#customer_mob !='':
-        #update_list.append(customer_mob)
+
+        del_query = 'Delete from products_orders where order_id = %s'
+        cursor.execute(del_query, order_input_two)
+        
+        connection.commit()
+       
         view_products()
+        sql_query = ('Select order_id from orders where order_id =%s')
+        cursor.execute(sql_query,order_input_two)
+        row = cursor.fetchone()
+        print(row)
 
-        customer_order = input("Please enter customer's products id (e.g 1,4,6,7) :")
+        customer_order = input("Please enter customer's products id (e.g 1,4,6,7): ")
         products =[]
         order_product =customer_order.split(',')
         for item in order_product:
-            products.append(item)
+            products.append((row,item))
+        print(products)
+        ##query to change product's id in orders_products table
+        del_query = 'Delete from products_orders where order_id = %s'
+        cursor.execute(del_query, order_input_two)
+        connection.commit()
+        insert_query= 'INSERT INTO products_orders (order_id,product_id) VALUES(%s,%s)'
+        cursor.executemany(insert_query,products)
+        connection.commit()
 
-        #if customer_order!='':
 
-# ### to check if customer name is empty or not
         
-#         if customer_order == "":
-#             pass
-
-#         else:# customer_order != '':
-        #update_list.append(customer_order)
-        #my_sql = my_sql + 'items =%s'
-
-        # if courier_input!='':
-        #     my_sql = my_sql+','
         view_couriers()
-        courier_input = int(input("Please enter courier_ID (or press enter for no change) :"))
+        courier_input = int(input("Please enter courier_ID: " ))#(or press enter for no change) :")
 
-        # if courier_input == '':
-        #     pass
-        # else:
         update_list.append(courier_input)
-            # my_sql = my_sql + 'courier_id =%s'
         
 
         update_list.append(order_input_two)
@@ -199,13 +185,15 @@ def update_order_table():
         cursor.execute(sql_query,update_list)
         connection.commit()
         print('Order updated successfully')
+        
+        
         view_orders_from_table()
 
 
         ### products from products table
     except:
         print('Please insert a valid input')
-#update_order_table()
+update_order_table()
 
 
 
